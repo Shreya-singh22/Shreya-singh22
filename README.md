@@ -58,7 +58,7 @@ Real-time CNN gesture recognition
 
 ## 🌐 Connect With Me
 
-<a href="https://www.linkedin.com/in/YOUR_LINK">
+<a href="https://www.linkedin.com/in/www.linkedin.com/in/shreya-chauhan94">
 <img src="https://skillicons.dev/icons?i=linkedin" height="40" />
 </a>
 
