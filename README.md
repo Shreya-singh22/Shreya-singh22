@@ -1,48 +1,48 @@
 <div align="center">
 
-# Hi 👋, I'm Shreya Singh Chauhan  
-### AI Developer | Full Stack Engineer | Building Tech That Matters 💜  
+# Hi , I'm Shreya Singh Chauhan  
+### AI Developer | Full Stack Engineer | Building Tech That Matters  
 
 <img src="https://readme-typing-svg.herokuapp.com/?lines=AI+Developer;Mental+Health+Tech+Builder;Full+Stack+Engineer;Open+Source+Enthusiast&center=true&width=500&height=45">
 
 ---
 
-## 👩‍💻 About Me
+##  About Me
 
-🎓 B.Tech CSE @ Bennett University (CGPA: 8.9)  
-💡 Passionate about AI, Accessibility & Mental Health Tech  
-🌍 Based in India  
-🚀 Building impact-driven products  
+ B.Tech CSE @ Bennett University (CGPA: 8.9)  
+ Passionate about AI, Accessibility & Mental Health Tech  
+ Based in India  
+ Building impact-driven products  
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
-### 💻 Languages  
+###  Languages  
 <img src="https://skillicons.dev/icons?i=python,java,cpp,js,ts,php,mysql" />
 
-### 🎨 Frontend & Backend  
+###  Frontend & Backend  
 <img src="https://skillicons.dev/icons?i=react,nodejs,html,css,tailwind,vite" />
 
-### 🤖 AI & Tools  
+###  AI & Tools  
 <img src="https://skillicons.dev/icons?i=tensorflow,pytorch,git,docker,figma" />
 
 ---
 
-## 🚀 Featured Projects
+##  Featured Projects
 
-💜 **You Matter Now – Mental Health Platform**  
+ **You Matter Now – Mental Health Platform**  
 AI chatbot • 1,000+ users • 85% satisfaction  
 
-🌸 **YourSakhi – Women-Centric Help Platform**  
+ **YourSakhi – Women-Centric Help Platform**  
 700+ users • 90% positive outcomes  
 
-🤟 **AI-Based Sign Language Translator**  
+ **AI-Based Sign Language Translator**  
 Real-time CNN gesture recognition  
 
 ---
 
-## 📊 GitHub Stats
+##  GitHub Stats
 
 <img src="https://github-readme-stats.vercel.app/api?username=Shreya-singh22&show_icons=true&theme=tokyonight" />
 
@@ -51,13 +51,13 @@ Real-time CNN gesture recognition
 
 ---
 
-## 🔥 GitHub Streak
+##  GitHub Streak
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=Shreya-singh22&theme=tokyonight" />
 
 ---
 
-## 🌐 Connect With Me
+##  Connect With Me
 
 <a href="https://www.linkedin.com/in/www.linkedin.com/in/shreya-chauhan94">
 <img src="https://skillicons.dev/icons?i=linkedin" height="40" />
@@ -69,7 +69,7 @@ Real-time CNN gesture recognition
 
 ---
 
-⭐ *Building technology that empowers, heals, and includes.*
+ *Building technology that empowers, heals, and includes.*
 
 </div>
 
