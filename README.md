@@ -26,7 +26,7 @@
 
 I'm a final-year B.Tech CSE student at **Bennett University** (CGPA 8.97) who would rather deploy something than demo it.
 
-Most of what's on this profile is **live and clickable** — a GitHub App that reviews pull requests, a mental-health platform with an AI chatbot, a real-time messenger, a sign-language translator that runs off your webcam.
+Most of what's on this profile is **live and clickable** — a GitHub App that reviews pull requests, an async pipeline that risk-scores financial data with an LLM, a mental-health platform with an AI chatbot, a sign-language translator that runs off your webcam.
 
 - Next.js/React on top, FastAPI/Express/Postgres underneath
 - LLM systems that are grounded — RAG, structured output, validation before anything gets shown
@@ -52,6 +52,20 @@ Install it on a repo and every PR gets reviewed automatically — inline comment
 
 <br/>
 
+### Transaction Processing Pipeline
+[Code](https://github.com/Shreya-singh22/txn-pipeline)
+
+Ingests messy financial CSVs and returns a risk summary through a job-polling API.
+
+- Cleans the data: ISO 8601 dates, stripped `$` signs, normalized currency/status, deduped rows
+- Flags anomalies, then classifies each transaction with Gemini
+- FastAPI enqueues to Redis, Celery workers process, Postgres stores jobs and results
+- Whole thing runs on Docker Compose — api, worker, redis, db
+
+`FastAPI` `Celery` `Redis` `Postgres` `Gemini` `Docker`
+
+<br/>
+
 ### You Matter Now — Mental Health Platform
 **[Live demo](https://you-matter-games-journal-main.vercel.app)** · [Code](https://github.com/Shreya-singh22/you-matter-now)
 
@@ -67,6 +81,20 @@ Mental health support that's available at 3am, not just office hours.
 
 <br/>
 
+### NexHire — Agentic Recruiter Suite
+[Code](https://github.com/Shreya-singh22/NexHire)
+
+Screens résumés against a job description and ranks candidates on a sortable leaderboard.
+
+- LangGraph state machine handles ingest branching and human-in-the-loop validation
+- Scores across 5 weighted dimensions: skills (30%), relevance (25%), production experience (20%), credentials (15%), writing (10%)
+- Hybrid retrieval — FAISS vectors fused with BM25 keyword ranking
+- PII is stripped before anything leaves for an external LLM
+
+`LangGraph` `Gemini` `FAISS` `BM25` `Streamlit` `Docker`
+
+<br/>
+
 ### Sign Language Detector
 **[Try it live](https://sign-lang-ai.onrender.com)** · [Code](https://github.com/Shreya-singh22/sign-lang-detector-)
 
@@ -79,49 +107,6 @@ Show an ASL sign to your webcam and the letter appears, live.
 - Annotated frames come back with landmarks and bounding box drawn on
 
 `Python` `Flask` `MediaPipe` `scikit-learn` `OpenCV`
-
-<br/>
-
-### Signal Clone — Real-Time Messenger
-**[Live demo](https://signal-clone-drab.vercel.app)** · [Code](https://github.com/Shreya-singh22/Signal-clone)
-
-A working Signal-style messenger — real auth, real persistence, real socket delivery.
-
-- 1:1 and group messaging over WebSockets
-- Typing indicators, delivery and read receipts, reactions, replies
-- Attachments, stickers/GIFs, disappearing messages
-- Signal-styled UI with light and dark themes
-- Encryption is deliberately mocked — no Double Ratchet, and the repo says so up front
-
-`Next.js 16` `TypeScript` `FastAPI` `SQLAlchemy` `WebSockets` `Framer Motion`
-
-<br/>
-
-### Transaction Processing Pipeline
-[Code](https://github.com/Shreya-singh22/txn-pipeline)
-
-Ingests messy financial CSVs and returns a risk summary through a job-polling API.
-
-- Cleans the data: ISO 8601 dates, stripped `$` signs, normalized currency/status, deduped rows
-- Flags anomalies, then classifies each transaction with Gemini
-- FastAPI enqueues to Redis, Celery workers process, Postgres stores jobs and results
-- Whole thing runs on Docker Compose — api, worker, redis, db
-
-`FastAPI` `Celery` `Redis` `Postgres` `Gemini` `Docker`
-
-<br/>
-
-### NexHire — Agentic Recruiter Suite
-[Code](https://github.com/Shreya-singh22/NexHire)
-
-Screens résumés against a job description and ranks candidates on a sortable leaderboard.
-
-- LangGraph state machine handles ingest branching and human-in-the-loop validation
-- Scores across 5 weighted dimensions: skills (30%), relevance (25%), production experience (20%), credentials (15%), writing (10%)
-- Hybrid retrieval — FAISS vectors fused with BM25 keyword ranking
-- PII is stripped before anything leaves for an external LLM
-
-`LangGraph` `Gemini` `FAISS` `BM25` `Streamlit` `Docker`
 
 ---
 
@@ -170,8 +155,6 @@ Ran 10+ technical events and 5+ workshops for the campus developer community.
 
 <img height="180" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Shreya-singh22&theme=tokyonight" alt="Languages by repo" />
 <img height="180" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Shreya-singh22&theme=tokyonight" alt="Languages by commit" />
-
-<img src="https://streak-stats.demolab.com?user=Shreya-singh22&theme=tokyonight&hide_border=true&background=0D1117" alt="GitHub streak" />
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=Shreya-singh22&theme=tokyo-night&hide_border=true&bg_color=0D1117&area=true" alt="Contribution graph" />
 
