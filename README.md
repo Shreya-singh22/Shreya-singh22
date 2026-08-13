@@ -26,11 +26,11 @@
 
 I'm a final-year B.Tech CSE student at **Bennett University** (CGPA 8.97) who would rather deploy something than demo it.
 
-Most of what's on this profile is **live and reachable** — a GitHub App that reviews pull requests, a mental-health platform with an AI chatbot, a real-time messenger, a sign-language translator that runs off your webcam. I care about the parts that don't show up in a screenshot: durable job queues, verified LLM output, sane database schemas, and apps that survive a cold start on free-tier hosting.
+Most of what's on this profile is **live and clickable** — a GitHub App that reviews pull requests, a mental-health platform with an AI chatbot, a real-time messenger, a sign-language translator that runs off your webcam.
 
-- Building AI-powered developer tooling and accessibility-focused products
-- Comfortable across the stack — Next.js/React on top, FastAPI/Express/Postgres underneath
-- Interested in LLM systems that are *grounded* — RAG, structured output, validation over vibes
+- Next.js/React on top, FastAPI/Express/Postgres underneath
+- LLM systems that are grounded — RAG, structured output, validation before anything gets shown
+- Shipped 10+ production features as a full stack intern at Evoc Labs
 - Open to internships and new-grad roles in full stack / AI engineering
 
 ---
@@ -38,61 +38,90 @@ Most of what's on this profile is **live and reachable** — a GitHub App that r
 ## Featured Projects
 
 ### AI PR Reviewer
-> Every pull request gets an automatic review — bugs, security issues, and sloppy code flagged as inline comments before a human looks.
+**[Live app](https://code-review-assistant-bwf8.onrender.com)** · **[Install the GitHub App](https://github.com/apps/shreya-ai-reviewer)** · **[See it catch a real bug](https://github.com/Shreya-singh22/theme-9-jewellery/pull/1/files)** · [Code](https://github.com/Shreya-singh22/Code-review-assistant)
 
-A GitHub App that listens for PR webhooks, enqueues jobs on a **Postgres-backed durable queue** (`SELECT ... FOR UPDATE SKIP LOCKED` — no Redis, survives restarts), sends diffs to **Groq / Llama 3.3**, then validates every finding against the real diff hunks so a hallucinated line number gets dropped instead of breaking the review. Ships with a dashboard tracking findings by severity across repos.
+Install it on a repo and every PR gets reviewed automatically — inline comments on bugs, security issues, and leftover debug logs.
 
-`Node.js` `TypeScript` `Express` `Next.js` `Postgres` `Groq` `zod` `octokit`
+- Opening or updating a PR fires a webhook that enqueues a job
+- Job queue runs on Postgres with `SELECT ... FOR UPDATE SKIP LOCKED` — durable across restarts, no Redis
+- Groq / Llama 3.3 returns findings as JSON, validated with `zod`
+- Every finding is matched against the actual diff hunks; hallucinated line numbers get dropped, not posted
+- Dashboard tracks review history and findings by severity across all your repos
 
-**[Live app](https://code-review-assistant-bwf8.onrender.com)** · **[Install the App](https://github.com/apps/shreya-ai-reviewer)** · **[Watch it catch a real bug](https://github.com/Shreya-singh22/theme-9-jewellery/pull/1/files)** · [Code](https://github.com/Shreya-singh22/Code-review-assistant)
+`Node.js` `TypeScript` `Express` `Next.js` `Postgres` `Groq` `octokit`
 
 <br/>
 
 ### You Matter Now — Mental Health Platform
-> Accessible, always-on emotional support: an empathetic AI chatbot, secure journaling with mood tracking, self-assessment screeners, and therapist discovery.
+**[Live demo](https://you-matter-games-journal-main.vercel.app)** · [Code](https://github.com/Shreya-singh22/you-matter-now)
 
-Built around the idea that support should be available at 3am, not just during office hours. Groq-hosted Llama 3 handles conversation; journaling, gratitude prompts, and wellness games handle everything the model shouldn't.
+Mental health support that's available at 3am, not just office hours.
+
+- 24/7 AI chatbot for empathetic conversation, running on Groq's Llama 3
+- Journaling with mood tracking and gratitude prompts
+- Anxiety and depression self-assessment screeners
+- Therapist and doctor discovery
+- Mindfulness games for stress reduction
 
 `TypeScript` `React` `Vite` `Tailwind` `shadcn/ui` `Groq`
-
-**[Live demo](https://you-matter-games-journal-main.vercel.app)** · [Code](https://github.com/Shreya-singh22/you-matter-now)
 
 <br/>
 
 ### Sign Language Detector
-> Show an ASL sign to your webcam and the letter appears — live, in the browser.
+**[Try it live](https://sign-lang-ai.onrender.com)** · [Code](https://github.com/Shreya-singh22/sign-lang-detector-)
 
-Frames stream to a Flask backend where **MediaPipe Hands** extracts 21 landmarks and a Random Forest classifier maps them to 28 classes (A–Z, space, nothing). Hold a sign steady for one second and it commits the letter to your sentence. Landmark-based rather than pixel-based, so it's fast enough to feel instant.
+Show an ASL sign to your webcam and the letter appears, live.
+
+- Browser streams webcam frames to a Flask backend as base64 JPEG
+- MediaPipe Hands pulls 21 hand landmarks out of each frame
+- A Random Forest classifier maps those coordinates to 28 classes (A–Z, space, nothing)
+- Hold a sign steady for 1 second and it commits the letter to your sentence
+- Annotated frames come back with landmarks and bounding box drawn on
 
 `Python` `Flask` `MediaPipe` `scikit-learn` `OpenCV`
-
-**[Try it live](https://sign-lang-ai.onrender.com)** · [Code](https://github.com/Shreya-singh22/sign-lang-detector-)
 
 <br/>
 
 ### Signal Clone — Real-Time Messenger
-> Full-stack Signal-inspired messenger: 1:1 and group chat over WebSockets, typing indicators, read receipts, reactions, replies, attachments, and disappearing messages.
+**[Live demo](https://signal-clone-drab.vercel.app)** · [Code](https://github.com/Shreya-singh22/Signal-clone)
 
-Everything except the cryptography is real — genuine auth, persistence, real-time delivery, and group management against a live database and socket connection. (Encryption is deliberately mocked; no Double Ratchet here, and the README says so.)
+A working Signal-style messenger — real auth, real persistence, real socket delivery.
+
+- 1:1 and group messaging over WebSockets
+- Typing indicators, delivery and read receipts, reactions, replies
+- Attachments, stickers/GIFs, disappearing messages
+- Signal-styled UI with light and dark themes
+- Encryption is deliberately mocked — no Double Ratchet, and the repo says so up front
 
 `Next.js 16` `TypeScript` `FastAPI` `SQLAlchemy` `WebSockets` `Framer Motion`
 
-**[Live demo](https://signal-clone-drab.vercel.app)** · [Code](https://github.com/Shreya-singh22/Signal-clone)
+<br/>
 
----
+### Transaction Processing Pipeline
+[Code](https://github.com/Shreya-singh22/txn-pipeline)
 
-## More Things I've Built
+Ingests messy financial CSVs and returns a risk summary through a job-polling API.
 
-| Project | What it does | Stack |
-|---|---|---|
-| **[NexHire](https://github.com/Shreya-singh22/NexHire)** | Agentic recruiting suite — scores résumés across a weighted 5-dimension matrix with human-in-the-loop validation and PII redaction before anything hits an LLM | LangGraph, Gemini, FAISS + BM25, Streamlit |
-| **[Transaction Pipeline](https://github.com/Shreya-singh22/txn-pipeline)** | Async pipeline that ingests messy financial CSVs, cleans them, detects anomalies, classifies with an LLM, and returns a narrative risk summary via a job-polling API | FastAPI, Celery, Redis, Postgres, Gemini, Docker |
-| **[Google Calendar Clone](https://google-calendar-clone-iota.vercel.app)** | Multi-calendar management, recurring events, dark mode, offline-first fallback — fully deployed | Next.js 16, Express, Prisma, Postgres |
-| **[PII Redaction Tool](https://github.com/Shreya-singh22/PII-Redaction-Tool)** | Redacts names, IDs, and contact info from `.docx` files while preserving formatting, with consistent fake replacements and a precision/recall eval harness | Python, spaCy NER, Faker, Flask |
-| **[Mental Health RAG](https://github.com/Shreya-singh22/mental-health-rag-endee)** | Fully local RAG pipeline — grounded answers from a vector DB instead of hallucinated ones | Sentence Transformers, Endee, Flan-T5, Docker |
-| **[YourSakhi](https://github.com/Shreya-singh22/YourSakhi-Dti-Project)** | Women's health platform — menstrual tracking, personalized guidance, and a wellness chatbot | TypeScript, React, Tailwind |
-| **[Micro Marketplace](https://micro-marketplace-mu.vercel.app)** | Full-stack marketplace with auth, cart, checkout, and favourites — web *and* React Native mobile | Node, Express, Prisma, React, Expo |
-| **[Tripzy](https://tripzy-indol.vercel.app)** | Travel-booking SPA with JWT auth and server-computed booking totals | Node, Express, Prisma, JWT |
+- Cleans the data: ISO 8601 dates, stripped `$` signs, normalized currency/status, deduped rows
+- Flags anomalies, then classifies each transaction with Gemini
+- FastAPI enqueues to Redis, Celery workers process, Postgres stores jobs and results
+- Whole thing runs on Docker Compose — api, worker, redis, db
+
+`FastAPI` `Celery` `Redis` `Postgres` `Gemini` `Docker`
+
+<br/>
+
+### NexHire — Agentic Recruiter Suite
+[Code](https://github.com/Shreya-singh22/NexHire)
+
+Screens résumés against a job description and ranks candidates on a sortable leaderboard.
+
+- LangGraph state machine handles ingest branching and human-in-the-loop validation
+- Scores across 5 weighted dimensions: skills (30%), relevance (25%), production experience (20%), credentials (15%), writing (10%)
+- Hybrid retrieval — FAISS vectors fused with BM25 keyword ranking
+- PII is stripped before anything leaves for an external LLM
+
+`LangGraph` `Gemini` `FAISS` `BM25` `Streamlit` `Docker`
 
 ---
 
